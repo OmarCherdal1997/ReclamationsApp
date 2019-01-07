@@ -1,0 +1,6 @@
+<button (click)='goBack()'>go back</button>
+    <div><span>Type de la reclamation:  </span>{{reclamation.type | uppercase}}</div>
+<div><span>Commune de la reclamation:  </span>{{reclamation.commune | uppercase}}</div>
+<div><span>Expediteur de la reclamation:  </span><input [(ngModel)]="reclamation.nom" placeholder="nom"> -- 
+  {{reclamation.CIN | uppercase}}</div>
+

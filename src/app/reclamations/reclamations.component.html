@@ -3,16 +3,14 @@
 <h2>Reclamation List</h2>
 <ul  class="reclamations">
   <li *ngFor="let reclamation of listReclamation" [class.selected]="reclamation==selectedReclamation" (click)="onSelect(reclamation)">
+    <a routerLink="/detail/{{reclamation.id}}">
     <span class="badge">
      
      {{reclamation.id}}
 
-    </span>{{reclamation.type}}
+    </span>{{reclamation.type}}</a>
   </li>
 </ul>
 <div *ngIf="selectedReclamation">
-    <div><span>Type de la reclamation:  </span>{{selectedReclamation.type | uppercase}}</div>
-<div><span>Commune de la reclamation:  </span>{{selectedReclamation.commune | uppercase}}</div>
-<div><span>Expediteur de la reclamation:  </span><input [(ngModel)]="selectedReclamation.nom" placeholder="nom"> -- 
-  {{selectedReclamation.CIN | uppercase}}</div>
+<app-reclamation-details [reclamation]='selectedReclamation'></app-reclamation-details>
 </div>
